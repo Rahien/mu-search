@@ -32,9 +32,9 @@ module MuSearch
           type = "attachment"
         elsif config.key?("type") && config["type"] == "dense-vector"
           type = "dense-vector"
-          chunking_predicate = config.key("chunking_predicate") or "http://mu.semte.ch/vocabularies/ext/hasChunkedValues"
-          index_predicate = config.key("list_index_predicate") or "http://mu.semte.ch/vocabularies/ext/mainListIndex"
-          null_vector_uri = config.key("null_vector") or "http://mu.semte.ch/vocabularies/ext/embeddingVector/null"
+          chunking_predicate = config.key("chunking_predicate") || "http://mu.semte.ch/vocabularies/ext/hasChunkedValues"
+          index_predicate = config.key("list_index_predicate") || "http://mu.semte.ch/vocabularies/ext/mainListIndex"
+          null_vector_uri = config.key("null_vector") || "http://mu.semte.ch/vocabularies/ext/embeddingVector/null"
 
         elsif config.key?("properties")
           type = "nested"
