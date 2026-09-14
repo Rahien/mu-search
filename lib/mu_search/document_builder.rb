@@ -168,9 +168,9 @@ SPARQL
       if values && values.length > 1
         @logger.debug("EMBED") { "multiple embeddings found for #{values[0]}, elastic doesn't allow this. averaging the values for storage"}
       end
-      chunking_predicate = definition.chunking_predicate or "http://mu.semte.ch/vocabularies/ext/hasChunkedValues"
-      index_predicate = definition.list_index_predicate or "http://mu.semte.ch/vocabularies/ext/mainListIndex"
-      null_vector_uri = definition.null_vector or "http://mu.semte.ch/vocabularies/ext/embeddingVector/null"
+      chunking_predicate = definition.chunking_predicate
+      index_predicate = definition.index_predicate
+      null_vector_uri = definition.null_vector_uri
       vector_values = build_simple_property( values ).collect do |value|
 
         @logger.debug("EMBED") { "building embedding for #{value}" }

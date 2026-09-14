@@ -7,4 +7,6 @@ source 'https://rubygems.org' do
   # matching our current backend setup
   gem 'elasticsearch', '~> 9.2'
   gem 'faraday-typhoeus', '~> 1.1'
+  gem 'json', '< 3.0'
+
 end
